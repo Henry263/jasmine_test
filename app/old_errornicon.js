@@ -10,8 +10,8 @@
 $(document).ready(function () {
 
     // Example
-    //_ErrIcon($("input"), 'fa-info-circle', "_medium", "orange", "left");
-
+    _ErrIcon($("input"), 'fa-info-circle', "_medium", "orange", "left");
+    _showErrFunc($("input"), 'blue', '2px');
     // adding icon
     $("head").append("<link>");
     var css = $("head").children(":last");
@@ -120,6 +120,7 @@ $(document).ready(function () {
 
         }
         var defaultVal = _br_brize + ' solid ' + _br_color;
+
         $element.css(propertyName, defaultVal);
         if (_get_nodeType($element))
         {
@@ -165,6 +166,8 @@ $(document).ready(function () {
         $errorSpan = $("<span class='icon_pos icon_pos_top'><i class='icon_specs fa " + icon_class + "' aria-hidden='true'></i><span/>");// +
         var $errorSpanDiv = $("<div class='top_btm_pos'><span class='icon_pos'><i class='icon_specs fa " + icon_class + "' aria-hidden='true'></i><span/></div>");// +
         // Check the font size.
+
+
         var font_size_prop = 'font-size';
         var default_font_size = '16px';
         if (_iconSize == undefined)

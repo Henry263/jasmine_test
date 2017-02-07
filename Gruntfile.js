@@ -34,7 +34,17 @@ module.exports = function (grunt) {
             },
             dest_file:{
                 files: {
-                    'dest/scripts/errornicon.min.js': ['app/errornicon.js'],
+                    'dest/scripts/errornicon.min.js': ['app/old_errornicon.js'],
+                }
+            }
+        }
+    });
+
+    grunt.config.merge({
+        sass: {
+            dist: {
+                files: {
+                    'dest/css/main.css': 'scss/main.scss'
                 }
             }
         }
@@ -44,7 +54,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('unit_test',['karma'])
+    grunt.registerTask('sass2css', ['sass']);
+    grunt.registerTask('unit_test',['karma']);
     grunt.registerTask('default', ['uglify', 'unit_test', 'watch:jshint']);
 };

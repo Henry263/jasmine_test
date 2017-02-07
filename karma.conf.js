@@ -21,11 +21,13 @@ module.exports = function(config) {
         'node_modules/jasmine-core/lib/jasmine-core/boot.js',
         'https://code.jquery.com/jquery-3.1.1.min.js',
         'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
+        'node_modules/jasmine-jquery-matchers/dist/jasmine-jquery-matchers.js',
 
-        'app/*.js',
+        'app/errorIcon.js',
         'test/*.js',
 
-        { pattern: './test', watched: true, served:true, included: false }
+        { pattern: './test', watched: true, served:true, included: false },
+        { pattern: 'app/test/**/*.html', included: true, served: true }
 
     ],
 

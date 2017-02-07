@@ -10,15 +10,34 @@ var MathUtils = function() {
 var multimath = function(val1, val2){
     return val1 * val2;
 }
+console.log(multimath(2,2));
 MathUtils.prototype.sum = function(number1, number2) {
     return number1 + number2;
+}
+
+MathUtils.prototype.concat = function(cval) {
+    return concatstring(cval);
 }
 
 function concatstring(val) {
     return val+"-"+val;
 }
 
-//$(document).ready(MathUtils);
+$(document).ready(MathUtils);
+
+
+
+var my_number
+// define our function with the callback argument
+function test_func_gv(arg1, arg2) {
+    // this generates a random number between
+    // arg1 and arg2
+    my_number = (arg1 + arg2) * 5;
+    // then we're done, so we'll call the callback and
+    // pass our result
+    //callback1(my_number);
+}
+
 
 
 // define our function with the callback argument
@@ -36,3 +55,5 @@ test_func(5, 15, function(num) {
     // callback is called
     console.log("callback called! " + num);
 });
+
+// Code under test
